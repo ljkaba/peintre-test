@@ -22,19 +22,19 @@ phpcs:
     stage: CodingStandards
     script:
         - phpcs -v --standard=PSR12 --ignore=./src/Kernel.php ./src
-    allow_failure: true
+    allow_failure: false
 
 phpstan:
     stage: CodingStandards
     script:
         - phpstan analyse ./src
-    allow_failure: true
+    allow_failure: false
 
 twig-lint:
     stage: CodingStandards
     script:
         - twig-lint lint ./templates
-    allow_failure: true
+    allow_failure: false
 
 phpunit:
     stage: UnitTests
